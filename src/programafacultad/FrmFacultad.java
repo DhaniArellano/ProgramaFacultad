@@ -21,6 +21,7 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     ArrayList<Profesor> dbProfesores = new ArrayList<>();
     ArrayList<Servicio> dbEmpServicio = new ArrayList<>();
+    ArrayList<Estudiante> dbEstudiantes = new ArrayList<>();
 
     public boolean addDbProfesores(Profesor newProfesor) {
         if (newProfesor == null) {
@@ -44,6 +45,17 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
+    public boolean addDbEstudiante(Estudiante newEstudiante) {
+        if (newEstudiante == null) {
+            return false;
+        }
+        if (!this.dbEstudiantes.contains(newEstudiante)) {
+            this.dbEstudiantes.add(newEstudiante);
+            return true;
+        } else {
+            return false;
+        }
+    }    
 
 
 
@@ -54,6 +66,10 @@ public class FrmFacultad extends javax.swing.JFrame {
     public ArrayList<Servicio> listarServicio() {
 
         return dbEmpServicio;
+    }
+    public ArrayList<Estudiante> listarEstudiante() {
+
+        return dbEstudiantes;
     }
     public void limpiar(){
         txt_nomb.setText("");
@@ -176,7 +192,22 @@ public class FrmFacultad extends javax.swing.JFrame {
         btn_editar_srv = new javax.swing.JButton();
         btn_limpiar_edit1 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        txt_idEst = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        txt_cursoEst = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        txt_nombEst = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        txt_apellEst = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        txt_ecivilEst = new javax.swing.JTextField();
+        btn_agregarEst = new javax.swing.JButton();
+        btn_limpiarEst = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
+        btn_listarProfe1 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbl_tablaEst = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -339,7 +370,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_listarProfe))
         );
@@ -439,7 +470,7 @@ public class FrmFacultad extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
+                .addContainerGap(239, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_buscaEdit)
                     .addComponent(btn_editarProfe)
@@ -475,7 +506,7 @@ public class FrmFacultad extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_ecivil_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel21))
-                    .addContainerGap(50, Short.MAX_VALUE)))
+                    .addContainerGap(62, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Editar Profesor", jPanel3);
@@ -637,7 +668,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_listarSrv))
         );
@@ -737,7 +768,7 @@ public class FrmFacultad extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 242, Short.MAX_VALUE)
+                .addGap(0, 254, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_busca_srv_Edit)
                     .addComponent(btn_editar_srv)
@@ -772,33 +803,149 @@ public class FrmFacultad extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_ecivil_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel29))
-                    .addContainerGap(25, Short.MAX_VALUE)))
+                    .addContainerGap(37, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Editar Empleado Servicio", jPanel6);
+
+        jLabel30.setText("Cedula");
+
+        txt_idEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel31.setText("Curso");
+
+        txt_cursoEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel32.setText("Nombre");
+
+        txt_nombEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel33.setText("Apellido");
+
+        txt_apellEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel34.setText("Estado Civil");
+
+        txt_ecivilEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        btn_agregarEst.setText("Agregar");
+        btn_agregarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarEstActionPerformed(evt);
+            }
+        });
+
+        btn_limpiarEst.setText("Limpiar");
+        btn_limpiarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarEstActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txt_idEst, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                    .addComponent(txt_cursoEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_ecivilEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_apellEst, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombEst, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addContainerGap(404, Short.MAX_VALUE)
+                    .addComponent(btn_agregarEst)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btn_limpiarEst)
+                    .addGap(24, 24, 24)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_idEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_cursoEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_nombEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_apellEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_ecivilEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addContainerGap(130, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(224, 224, 224)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_agregarEst)
+                        .addComponent(btn_limpiarEst))
+                    .addContainerGap(30, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Crear Estudiante", jPanel7);
+
+        btn_listarProfe1.setText("Listar");
+        btn_listarProfe1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_listarProfe1ActionPerformed(evt);
+            }
+        });
+
+        tbl_tablaEst.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tbl_tablaEst);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(btn_listarProfe1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_listarProfe1)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Listar Estudiante", jPanel8);
@@ -811,7 +958,7 @@ public class FrmFacultad extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 286, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Editar Estudiante", jPanel9);
@@ -837,8 +984,8 @@ public class FrmFacultad extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -1124,6 +1271,41 @@ public class FrmFacultad extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_limpiar_edit1ActionPerformed
 
+    private void btn_agregarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarEstActionPerformed
+        // TODO add your handling code here:
+        Estudiante est = null;
+        try {
+            String nombre = txt_nombEst.getText();
+            String apellido = txt_apellEst.getText();
+            String cedula = txt_idEst.getText();
+            String ecivil = txt_ecivilEst.getText();
+            //Date fechaIncorp = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor.getText());
+            Curso curso = new Curso(txt_cursoEst.getText());
+            if (!"".equals(nombre) && !"".equals(apellido) && !"".equals(cedula) && !"".equals(ecivil) && !"".equals(curso.getNombreCurso())) {
+                //Profesor(Departamento depto, Despacho despacho, Date fechaIncor, String id, String nombre, String apellido, String eCivil, despacho, fechaIncor, id, nombre, apellido, eCivil);
+                est = new Estudiante(curso, cedula, nombre, apellido, ecivil);
+            }
+            if (addDbEstudiante(est)) {
+                JOptionPane.showMessageDialog(rootPane, "Estudiante guardado");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No se puede guardar");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error, verifique los campos estén correctos" + e);
+        }
+
+    }//GEN-LAST:event_btn_agregarEstActionPerformed
+
+    private void btn_limpiarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarEstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_limpiarEstActionPerformed
+
+    private void btn_listarProfe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarProfe1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_listarProfe1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1162,16 +1344,19 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agregar;
+    private javax.swing.JButton btn_agregarEst;
     private javax.swing.JButton btn_agregar_srv;
     private javax.swing.JButton btn_buscaEdit;
     private javax.swing.JButton btn_busca_srv_Edit;
     private javax.swing.JButton btn_editarProfe;
     private javax.swing.JButton btn_editar_srv;
     private javax.swing.JButton btn_limpiar;
+    private javax.swing.JButton btn_limpiarEst;
     private javax.swing.JButton btn_limpiar_edit;
     private javax.swing.JButton btn_limpiar_edit1;
     private javax.swing.JButton btn_limpiar_srv;
     private javax.swing.JButton btn_listarProfe;
+    private javax.swing.JButton btn_listarProfe1;
     private javax.swing.JButton btn_listarSrv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1196,6 +1381,11 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1213,13 +1403,17 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tbl_tabla;
+    private javax.swing.JTable tbl_tablaEst;
     private javax.swing.JTable tbl_tablaSrv;
     private javax.swing.JTextField txt_ape_srv;
     private javax.swing.JTextField txt_ape_srv_edit;
     private javax.swing.JTextField txt_apell;
+    private javax.swing.JTextField txt_apellEst;
     private javax.swing.JTextField txt_apell_edit;
+    private javax.swing.JTextField txt_cursoEst;
     private javax.swing.JTextField txt_depto;
     private javax.swing.JTextField txt_depto_edit;
     private javax.swing.JTextField txt_desp;
@@ -1227,10 +1421,12 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_desp_srv;
     private javax.swing.JTextField txt_desp_srv_edit;
     private javax.swing.JTextField txt_ecivil;
+    private javax.swing.JTextField txt_ecivilEst;
     private javax.swing.JTextField txt_ecivil_edit;
     private javax.swing.JTextField txt_ecivil_srv;
     private javax.swing.JTextField txt_ecivil_srv_edit;
     private javax.swing.JTextField txt_id;
+    private javax.swing.JTextField txt_idEst;
     private javax.swing.JTextField txt_id_edit;
     private javax.swing.JTextField txt_id_srv;
     private javax.swing.JTextField txt_id_srv_edit;
@@ -1241,6 +1437,7 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_nom_srv;
     private javax.swing.JTextField txt_nom_srv_edit;
     private javax.swing.JTextField txt_nomb;
+    private javax.swing.JTextField txt_nombEst;
     private javax.swing.JTextField txt_nomb_edit;
     private javax.swing.JTextField txt_sec_srv;
     private javax.swing.JTextField txt_sec_srv_edit;

@@ -824,9 +824,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="171" max="32767" attributes="0"/>
-                      <Component id="btn_buscaEdit1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_busca_srv_Edit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btn_editarProfe1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_editar_srv" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btn_limpiar_edit1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
@@ -845,12 +845,12 @@
                           </Group>
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txt_sec_srv1" alignment="1" pref="392" max="32767" attributes="0"/>
-                              <Component id="txt_nom_srv1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="txt_ape_srv1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txt_sec_srv_edit" alignment="1" pref="392" max="32767" attributes="0"/>
+                              <Component id="txt_nom_srv_edit" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txt_ape_srv_edit" alignment="1" max="32767" attributes="0"/>
                               <Component id="txt_id_srv_edit" alignment="1" max="32767" attributes="0"/>
-                              <Component id="txt_incor_srv1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="txt_ecivil_srv1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txt_incor_srv_edit" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txt_ecivil_srv_edit" alignment="0" max="32767" attributes="0"/>
                               <Component id="txt_desp_srv_edit" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -863,8 +863,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="262" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn_buscaEdit1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_editarProfe1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_busca_srv_Edit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_editar_srv" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_limpiar_edit1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -883,26 +883,26 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_sec_srv1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_sec_srv_edit" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_nom_srv1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_nom_srv_edit" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_ape_srv1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_ape_srv_edit" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_incor_srv1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_incor_srv_edit" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_ecivil_srv1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_ecivil_srv_edit" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="45" max="32767" attributes="0"/>
@@ -941,14 +941,14 @@
                 <Property name="text" type="java.lang.String" value="Seccion"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_sec_srv1">
+            <Component class="javax.swing.JTextField" name="txt_sec_srv_edit">
               <Properties>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[20, 24]"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_sec_srv1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_sec_srv_editActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel26">
@@ -956,7 +956,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_nom_srv1">
+            <Component class="javax.swing.JTextField" name="txt_nom_srv_edit">
               <Properties>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[20, 24]"/>
@@ -968,7 +968,7 @@
                 <Property name="text" type="java.lang.String" value="Apellido"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_ape_srv1">
+            <Component class="javax.swing.JTextField" name="txt_ape_srv_edit">
               <Properties>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[20, 24]"/>
@@ -980,8 +980,9 @@
                 <Property name="text" type="java.lang.String" value="Fecha ingreso "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_incor_srv1">
+            <Component class="javax.swing.JTextField" name="txt_incor_srv_edit">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="01/01/2000"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[20, 24]"/>
@@ -993,27 +994,27 @@
                 <Property name="text" type="java.lang.String" value="Estado Civil"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_ecivil_srv1">
+            <Component class="javax.swing.JTextField" name="txt_ecivil_srv_edit">
               <Properties>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[20, 24]"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_buscaEdit1">
+            <Component class="javax.swing.JButton" name="btn_busca_srv_Edit">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_buscaEdit1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_busca_srv_EditActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_editarProfe1">
+            <Component class="javax.swing.JButton" name="btn_editar_srv">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_editarProfe1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_editar_srvActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_limpiar_edit1">

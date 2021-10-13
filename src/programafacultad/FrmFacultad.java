@@ -163,17 +163,17 @@ public class FrmFacultad extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         txt_desp_srv_edit = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        txt_sec_srv1 = new javax.swing.JTextField();
+        txt_sec_srv_edit = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        txt_nom_srv1 = new javax.swing.JTextField();
+        txt_nom_srv_edit = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        txt_ape_srv1 = new javax.swing.JTextField();
+        txt_ape_srv_edit = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txt_incor_srv1 = new javax.swing.JTextField();
+        txt_incor_srv_edit = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        txt_ecivil_srv1 = new javax.swing.JTextField();
-        btn_buscaEdit1 = new javax.swing.JButton();
-        btn_editarProfe1 = new javax.swing.JButton();
+        txt_ecivil_srv_edit = new javax.swing.JTextField();
+        btn_busca_srv_Edit = new javax.swing.JButton();
+        btn_editar_srv = new javax.swing.JButton();
         btn_limpiar_edit1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -651,41 +651,42 @@ public class FrmFacultad extends javax.swing.JFrame {
 
         jLabel25.setText("Seccion");
 
-        txt_sec_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
-        txt_sec_srv1.addActionListener(new java.awt.event.ActionListener() {
+        txt_sec_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_sec_srv_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_sec_srv1ActionPerformed(evt);
+                txt_sec_srv_editActionPerformed(evt);
             }
         });
 
         jLabel26.setText("Nombre");
 
-        txt_nom_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_nom_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
         jLabel27.setText("Apellido");
 
-        txt_ape_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_ape_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
         jLabel28.setText("Fecha ingreso ");
 
-        txt_incor_srv1.setText("01/01/2000");
-        txt_incor_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_incor_srv_edit.setEditable(false);
+        txt_incor_srv_edit.setText("01/01/2000");
+        txt_incor_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
         jLabel29.setText("Estado Civil");
 
-        txt_ecivil_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_ecivil_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
-        btn_buscaEdit1.setText("Buscar");
-        btn_buscaEdit1.addActionListener(new java.awt.event.ActionListener() {
+        btn_busca_srv_Edit.setText("Buscar");
+        btn_busca_srv_Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscaEdit1ActionPerformed(evt);
+                btn_busca_srv_EditActionPerformed(evt);
             }
         });
 
-        btn_editarProfe1.setText("Editar");
-        btn_editarProfe1.addActionListener(new java.awt.event.ActionListener() {
+        btn_editar_srv.setText("Editar");
+        btn_editar_srv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarProfe1ActionPerformed(evt);
+                btn_editar_srvActionPerformed(evt);
             }
         });
 
@@ -702,9 +703,9 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(171, Short.MAX_VALUE)
-                .addComponent(btn_buscaEdit1)
+                .addComponent(btn_busca_srv_Edit)
                 .addGap(18, 18, 18)
-                .addComponent(btn_editarProfe1)
+                .addComponent(btn_editar_srv)
                 .addGap(18, 18, 18)
                 .addComponent(btn_limpiar_edit1)
                 .addGap(169, 169, 169))
@@ -721,12 +722,12 @@ public class FrmFacultad extends javax.swing.JFrame {
                         .addComponent(jLabel28))
                     .addGap(61, 61, 61)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_sec_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
-                        .addComponent(txt_nom_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_ape_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_sec_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                        .addComponent(txt_nom_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_ape_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txt_id_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_incor_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_ecivil_srv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_incor_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_ecivil_srv_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txt_desp_srv_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(24, 24, 24)))
         );
@@ -735,8 +736,8 @@ public class FrmFacultad extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 262, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_buscaEdit1)
-                    .addComponent(btn_editarProfe1)
+                    .addComponent(btn_busca_srv_Edit)
+                    .addComponent(btn_editar_srv)
                     .addComponent(btn_limpiar_edit1)))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
@@ -751,22 +752,22 @@ public class FrmFacultad extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel25)
-                        .addComponent(txt_sec_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_sec_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_nom_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_nom_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel26))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_ape_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_ape_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel27))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_incor_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_incor_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel28))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_ecivil_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_ecivil_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel29))
                     .addContainerGap(45, Short.MAX_VALUE)))
         );
@@ -890,7 +891,6 @@ public class FrmFacultad extends javax.swing.JFrame {
             }
         }
         limpiar();
-
     }//GEN-LAST:event_btn_editarProfeActionPerformed
 
     private void txt_depto_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_depto_editActionPerformed
@@ -928,6 +928,37 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     private void txt_sec_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sec_srvActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        int index = 0;
+        Servicio serviEncontrado = null;
+        String cedSrvBuscar = txt_id_edit.getText();
+        for (Servicio servi : dbEmpServicio) {
+            if (servi.getId().equals(cedSrvBuscar)) {
+                System.out.println(index);
+                serviEncontrado = servi;
+                break;
+            }
+            index++;
+        }
+        if (serviEncontrado != null) {
+            Seccion sec;
+            sec = new Seccion(txt_sec_srv_edit.getText());
+            Despacho desp;
+            desp = new Despacho(txt_desp_srv_edit.getText());
+            try {
+                Date fincor = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv_edit.getText());
+                String idEditar = txt_id_edit.getText();
+                String nomEditar = txt_nomb_edit.getText();
+                String apeEditar = txt_apell_edit.getText();
+                String estCivil = txt_ecivil_edit.getText();
+                //(Departamento , Despacho , Date fechaIncor,  id,  nombre,  apellido,  eCivil
+                dbEmpServicio.set(index, new Servicio(sec, desp, fincor, idEditar, nomEditar, apeEditar, estCivil));
+                JOptionPane.showMessageDialog(rootPane, "Profesor Editado Correctamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error, verifique que la fecha u otros campos estén correctos" + e);
+            }
+        }
+        limpiar();
     }//GEN-LAST:event_txt_sec_srvActionPerformed
 
     private void btn_agregar_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregar_srvActionPerformed
@@ -936,8 +967,8 @@ public class FrmFacultad extends javax.swing.JFrame {
         try {
             String nombre = txt_nom_srv.getText();
             String apellido = txt_ape_srv.getText();
-            String cedula = txt_ape_srv.getText();
-            String ecivil = txt_id_srv.getText();
+            String cedula = txt_id_srv.getText();
+            String ecivil = txt_ecivil_srv.getText();
             Date fechaIncorp = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv.getText());
             Seccion sec = new Seccion(txt_sec_srv.getText());
             Despacho despacho = new Despacho(txt_desp_srv.getText());
@@ -983,17 +1014,69 @@ public class FrmFacultad extends javax.swing.JFrame {
         tbl_tablaSrv.setModel(model);
     }//GEN-LAST:event_btn_listarSrvActionPerformed
 
-    private void txt_sec_srv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sec_srv1ActionPerformed
+    private void txt_sec_srv_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sec_srv_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_sec_srv1ActionPerformed
+    }//GEN-LAST:event_txt_sec_srv_editActionPerformed
 
-    private void btn_buscaEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscaEdit1ActionPerformed
+    private void btn_busca_srv_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_busca_srv_EditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_buscaEdit1ActionPerformed
+        //buscar
+        Servicio serviEncontrado = null;
+        String cedBuscar = txt_id_srv_edit.getText();
+        for (Servicio servi : dbEmpServicio) {
+            if (servi.getId().equals(cedBuscar)) {
+                serviEncontrado = servi;
+                break;
+            }
+        }
+        if (serviEncontrado != null) {
+            txt_ape_srv_edit.setText(serviEncontrado.getApellido());
+            txt_sec_srv_edit.setText(serviEncontrado.devolverSec());
+            txt_desp_srv_edit.setText(serviEncontrado.devolverDesp());
+            txt_ecivil_srv_edit.setText(serviEncontrado.geteCivil());
+            txt_nom_srv_edit.setText(serviEncontrado.getNombre());
+            txt_incor_srv_edit.setText(String.valueOf(serviEncontrado.getFechaIncor()));
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No se encuentra ese id");
+        }
 
-    private void btn_editarProfe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarProfe1ActionPerformed
+        
+    }//GEN-LAST:event_btn_busca_srv_EditActionPerformed
+
+    private void btn_editar_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editar_srvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_editarProfe1ActionPerformed
+        //editar
+        int index = 0;
+        Servicio serviEncontrado = null;
+        String cedBuscar = txt_id_srv_edit.getText();
+        for (Servicio servi : dbEmpServicio) {
+            if (servi.getId().equals(cedBuscar)) {
+                System.out.println(index);
+                serviEncontrado = servi;
+                break;
+            }
+            index++;
+        }
+        if (serviEncontrado != null) {
+            Seccion sec;
+            sec = new Seccion(txt_sec_srv_edit.getText());
+            Despacho desp;
+            desp = new Despacho(txt_desp_srv_edit.getText());
+            try {
+                Date fincor = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv_edit.getText());
+                String idEditar = txt_id_srv_edit.getText();
+                String nomEditar = txt_nom_srv_edit.getText();
+                String apeEditar = txt_ape_srv_edit.getText();
+                String estCivil = txt_ecivil_srv_edit.getText();
+                //(Seccion , Despacho , Date fechaIncor,  id,  nombre,  apellido,  eCivil
+                dbEmpServicio.set(index, new Servicio(sec, desp, fincor, idEditar, nomEditar, apeEditar, estCivil));
+                JOptionPane.showMessageDialog(rootPane, "Empleado Editado Correctamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error, verifique que la fecha u otros campos estén correctos" + e);
+            }
+        }
+        limpiar();        
+    }//GEN-LAST:event_btn_editar_srvActionPerformed
 
     private void btn_limpiar_edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiar_edit1ActionPerformed
         // TODO add your handling code here:
@@ -1039,9 +1122,9 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_agregar_srv;
     private javax.swing.JButton btn_buscaEdit;
-    private javax.swing.JButton btn_buscaEdit1;
+    private javax.swing.JButton btn_busca_srv_Edit;
     private javax.swing.JButton btn_editarProfe;
-    private javax.swing.JButton btn_editarProfe1;
+    private javax.swing.JButton btn_editar_srv;
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JButton btn_limpiar_edit;
     private javax.swing.JButton btn_limpiar_edit1;
@@ -1089,7 +1172,7 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTable tbl_tabla;
     private javax.swing.JTable tbl_tablaSrv;
     private javax.swing.JTextField txt_ape_srv;
-    private javax.swing.JTextField txt_ape_srv1;
+    private javax.swing.JTextField txt_ape_srv_edit;
     private javax.swing.JTextField txt_apell;
     private javax.swing.JTextField txt_apell_edit;
     private javax.swing.JTextField txt_depto;
@@ -1101,7 +1184,7 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_ecivil;
     private javax.swing.JTextField txt_ecivil_edit;
     private javax.swing.JTextField txt_ecivil_srv;
-    private javax.swing.JTextField txt_ecivil_srv1;
+    private javax.swing.JTextField txt_ecivil_srv_edit;
     private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_id_edit;
     private javax.swing.JTextField txt_id_srv;
@@ -1109,12 +1192,12 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_incor;
     private javax.swing.JTextField txt_incor_edit;
     private javax.swing.JTextField txt_incor_srv;
-    private javax.swing.JTextField txt_incor_srv1;
+    private javax.swing.JTextField txt_incor_srv_edit;
     private javax.swing.JTextField txt_nom_srv;
-    private javax.swing.JTextField txt_nom_srv1;
+    private javax.swing.JTextField txt_nom_srv_edit;
     private javax.swing.JTextField txt_nomb;
     private javax.swing.JTextField txt_nomb_edit;
     private javax.swing.JTextField txt_sec_srv;
-    private javax.swing.JTextField txt_sec_srv1;
+    private javax.swing.JTextField txt_sec_srv_edit;
     // End of variables declaration//GEN-END:variables
 }

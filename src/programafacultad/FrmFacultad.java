@@ -4,12 +4,9 @@
  */
 package programafacultad;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -34,6 +31,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
+
     public boolean addDbEmServicio(Servicio newServicio) {
         if (newServicio == null) {
             return false;
@@ -45,6 +43,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
+
     public boolean addDbEstudiante(Estudiante newEstudiante) {
         if (newEstudiante == null) {
             return false;
@@ -55,23 +54,25 @@ public class FrmFacultad extends javax.swing.JFrame {
         } else {
             return false;
         }
-    }    
-
-
+    }
 
     public ArrayList<Profesor> listarProfesores() {
 
         return dbProfesores;
     }
+
     public ArrayList<Servicio> listarServicio() {
 
         return dbEmpServicio;
     }
+
     public ArrayList<Estudiante> listarEstudiante() {
 
         return dbEstudiantes;
     }
-    public void limpiar(){
+
+    public void limpiar() {
+        //all profesor
         txt_nomb.setText("");
         txt_apell_edit.setText("");
         txt_incor_edit.setText("01/01/2000");
@@ -87,6 +88,7 @@ public class FrmFacultad extends javax.swing.JFrame {
         txt_depto.setText("");
         txt_desp.setText("");
         txt_ecivil.setText("");
+        //all empleado servicio
         txt_ape_srv.setText("");
         txt_desp_srv.setText("");
         txt_ecivil_srv.setText("");
@@ -94,6 +96,23 @@ public class FrmFacultad extends javax.swing.JFrame {
         txt_incor.setText("01/01/2000");
         txt_nom_srv.setText("");
         txt_sec_srv.setText("");
+        txt_ape_srv_edit.setText("");
+        txt_desp_srv_edit.setText("");
+        txt_ecivil_srv_edit.setText("");
+        txt_id_srv_edit.setText("");
+        txt_incor_srv_edit.setText("");
+        txt_sec_srv_edit.setText("");
+        //all estudiante
+        txt_idEst_edit.setText("");
+        txt_apellEst_edit.setText("");
+        txt_cursoEst_edit.setText("");
+        txt_ecivilEst_edit.setText("");
+        txt_nombEst_edit.setText("");
+        txt_cursoEst_edit.setText("");
+        txt_idEst.setText("");
+        txt_nombEst.setText("");
+        txt_apellEst.setText("");
+        txt_ecivilEst.setText("");
     }
 
     /**
@@ -205,10 +224,23 @@ public class FrmFacultad extends javax.swing.JFrame {
         btn_agregarEst = new javax.swing.JButton();
         btn_limpiarEst = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        btn_listarProfe1 = new javax.swing.JButton();
+        btn_listarEst = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbl_tablaEst = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        txt_idEst_edit = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        txt_cursoEst_edit = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        txt_nombEst_edit = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        txt_apellEst_edit = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        txt_ecivilEst_edit = new javax.swing.JTextField();
+        btn_buscaEst_edit = new javax.swing.JButton();
+        btn_editarEst = new javax.swing.JButton();
+        btn_limpiar_edit2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -905,10 +937,10 @@ public class FrmFacultad extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Estudiante", jPanel7);
 
-        btn_listarProfe1.setText("Listar");
-        btn_listarProfe1.addActionListener(new java.awt.event.ActionListener() {
+        btn_listarEst.setText("Listar");
+        btn_listarEst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_listarProfe1ActionPerformed(evt);
+                btn_listarEstActionPerformed(evt);
             }
         });
 
@@ -931,7 +963,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(260, 260, 260)
-                .addComponent(btn_listarProfe1)
+                .addComponent(btn_listarEst)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
@@ -944,21 +976,111 @@ public class FrmFacultad extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_listarProfe1)
+                .addComponent(btn_listarEst)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Listar Estudiante", jPanel8);
 
+        jLabel35.setText("Cedula");
+
+        txt_idEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel36.setText("Curso");
+
+        txt_cursoEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel37.setText("Nombre");
+
+        txt_nombEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel38.setText("Apellido");
+
+        txt_apellEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel39.setText("Estado Civil");
+
+        txt_ecivilEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        btn_buscaEst_edit.setText("Buscar");
+        btn_buscaEst_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscaEst_editActionPerformed(evt);
+            }
+        });
+
+        btn_editarEst.setText("Editar");
+        btn_editarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editarEstActionPerformed(evt);
+            }
+        });
+
+        btn_limpiar_edit2.setText("Limpiar");
+        btn_limpiar_edit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiar_edit2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_buscaEst_edit)
+                .addGap(18, 18, 18)
+                .addComponent(btn_editarEst)
+                .addGap(18, 18, 18)
+                .addComponent(btn_limpiar_edit2)
+                .addGap(158, 158, 158))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txt_idEst_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_cursoEst_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_ecivilEst_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_apellEst_edit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombEst_edit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 286, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_idEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_cursoEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_nombEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_apellEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_ecivilEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_buscaEst_edit)
+                    .addComponent(btn_editarEst)
+                    .addComponent(btn_limpiar_edit2))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Editar Estudiante", jPanel9);
@@ -1182,8 +1304,6 @@ public class FrmFacultad extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_limpiar_srvActionPerformed
 
     private void btn_listarSrvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarSrvActionPerformed
-        // TODO add your handling code here:
-        // TODO add your handling code here:
         ArrayList<Servicio> datosServicio = listarServicio();
         DefaultTableModel model;
         //Departamento depto, Despacho despacho, Date fechaIncor, String id, String nombre, String apellido, String eCivil
@@ -1208,8 +1328,6 @@ public class FrmFacultad extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_sec_srv_editActionPerformed
 
     private void btn_busca_srv_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_busca_srv_EditActionPerformed
-        // TODO add your handling code here:
-        //buscar
         Servicio serviEncontrado = null;
         String cedBuscar = txt_id_srv_edit.getText();
         for (Servicio servi : dbEmpServicio) {
@@ -1229,12 +1347,10 @@ public class FrmFacultad extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "No se encuentra ese id");
         }
 
-        
+
     }//GEN-LAST:event_btn_busca_srv_EditActionPerformed
 
     private void btn_editar_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editar_srvActionPerformed
-        // TODO add your handling code here:
-        //editar
         int index = 0;
         Servicio serviEncontrado = null;
         String cedBuscar = txt_id_srv_edit.getText();
@@ -1264,7 +1380,7 @@ public class FrmFacultad extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Error, verifique que la fecha u otros campos estén correctos" + e);
             }
         }
-        limpiar();        
+        limpiar();
     }//GEN-LAST:event_btn_editar_srvActionPerformed
 
     private void btn_limpiar_edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiar_edit1ActionPerformed
@@ -1300,11 +1416,81 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     private void btn_limpiarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarEstActionPerformed
         // TODO add your handling code here:
+        limpiar();
     }//GEN-LAST:event_btn_limpiarEstActionPerformed
 
-    private void btn_listarProfe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarProfe1ActionPerformed
+    private void btn_listarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarEstActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_listarProfe1ActionPerformed
+        ArrayList<Estudiante> datosEstudiante = listarEstudiante();
+        DefaultTableModel model;
+        //Departamento depto, Despacho despacho, Date fechaIncor, String id, String nombre, String apellido, String eCivil
+        String[] columnas = {"id", "nombre", "apellido", "eCivil", "curso"};
+        model = new DefaultTableModel(null, columnas);
+        String[] filas = new String[5];
+        for (Estudiante est : datosEstudiante) {
+            filas[0] = est.getId();
+            filas[1] = est.getNombre();
+            filas[2] = est.getApellido();
+            filas[3] = est.geteCivil();
+            filas[4] = est.devolverCurso();
+            model.addRow(filas);
+        }
+        tbl_tablaEst.setModel(model);
+    }//GEN-LAST:event_btn_listarEstActionPerformed
+
+    private void btn_buscaEst_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscaEst_editActionPerformed
+        Estudiante estEncontrado = null;
+        String cedBuscar = txt_idEst_edit.getText();
+        for (Estudiante est : dbEstudiantes) {
+            if (est.getId().equals(cedBuscar)) {
+                estEncontrado = est;
+                break;
+            }
+        }
+        if (estEncontrado != null) {
+            txt_apellEst_edit.setText(estEncontrado.getApellido());
+            txt_cursoEst_edit.setText(estEncontrado.devolverCurso());
+            txt_ecivilEst_edit.setText(estEncontrado.geteCivil());
+            txt_nombEst_edit.setText(estEncontrado.getNombre());
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No se encuentra ese id");
+        }
+    }//GEN-LAST:event_btn_buscaEst_editActionPerformed
+
+    private void btn_editarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarEstActionPerformed
+        int index = 0;
+        Estudiante estEncontrado = null;
+        String cedBuscar = txt_idEst_edit.getText();
+        for (Estudiante est : dbEstudiantes) {
+            if (est.getId().equals(cedBuscar)) {
+                System.out.println(index);
+                estEncontrado = est;
+                break;
+            }
+            index++;
+        }
+        if (estEncontrado != null) {
+            Curso curso;
+            curso = new Curso(txt_cursoEst_edit.getText());
+            try {
+                //Date fincor = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv_edit.getText());
+                String idEditar = txt_idEst_edit.getText();
+                String nomEditar = txt_nombEst_edit.getText();
+                String apeEditar = txt_apellEst_edit.getText();
+                String estCivil = txt_ecivilEst_edit.getText();
+                //Curso curso, String id, String nombre, String apellido, String eCivil
+                dbEstudiantes.set(index, new Estudiante(curso, idEditar, nomEditar, apeEditar, estCivil));
+                JOptionPane.showMessageDialog(rootPane, "Estudiante Editado Correctamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error, verifique que los campos estén correctos" + e);
+            }
+        }
+        limpiar();
+    }//GEN-LAST:event_btn_editarEstActionPerformed
+
+    private void btn_limpiar_edit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiar_edit2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_limpiar_edit2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1347,16 +1533,19 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JButton btn_agregarEst;
     private javax.swing.JButton btn_agregar_srv;
     private javax.swing.JButton btn_buscaEdit;
+    private javax.swing.JButton btn_buscaEst_edit;
     private javax.swing.JButton btn_busca_srv_Edit;
+    private javax.swing.JButton btn_editarEst;
     private javax.swing.JButton btn_editarProfe;
     private javax.swing.JButton btn_editar_srv;
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JButton btn_limpiarEst;
     private javax.swing.JButton btn_limpiar_edit;
     private javax.swing.JButton btn_limpiar_edit1;
+    private javax.swing.JButton btn_limpiar_edit2;
     private javax.swing.JButton btn_limpiar_srv;
+    private javax.swing.JButton btn_listarEst;
     private javax.swing.JButton btn_listarProfe;
-    private javax.swing.JButton btn_listarProfe1;
     private javax.swing.JButton btn_listarSrv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1386,6 +1575,11 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1412,8 +1606,10 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_ape_srv_edit;
     private javax.swing.JTextField txt_apell;
     private javax.swing.JTextField txt_apellEst;
+    private javax.swing.JTextField txt_apellEst_edit;
     private javax.swing.JTextField txt_apell_edit;
     private javax.swing.JTextField txt_cursoEst;
+    private javax.swing.JTextField txt_cursoEst_edit;
     private javax.swing.JTextField txt_depto;
     private javax.swing.JTextField txt_depto_edit;
     private javax.swing.JTextField txt_desp;
@@ -1422,11 +1618,13 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_desp_srv_edit;
     private javax.swing.JTextField txt_ecivil;
     private javax.swing.JTextField txt_ecivilEst;
+    private javax.swing.JTextField txt_ecivilEst_edit;
     private javax.swing.JTextField txt_ecivil_edit;
     private javax.swing.JTextField txt_ecivil_srv;
     private javax.swing.JTextField txt_ecivil_srv_edit;
     private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_idEst;
+    private javax.swing.JTextField txt_idEst_edit;
     private javax.swing.JTextField txt_id_edit;
     private javax.swing.JTextField txt_id_srv;
     private javax.swing.JTextField txt_id_srv_edit;
@@ -1438,6 +1636,7 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_nom_srv_edit;
     private javax.swing.JTextField txt_nomb;
     private javax.swing.JTextField txt_nombEst;
+    private javax.swing.JTextField txt_nombEst_edit;
     private javax.swing.JTextField txt_nomb_edit;
     private javax.swing.JTextField txt_sec_srv;
     private javax.swing.JTextField txt_sec_srv_edit;

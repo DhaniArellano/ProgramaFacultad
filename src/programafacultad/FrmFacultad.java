@@ -4,12 +4,9 @@
  */
 package programafacultad;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +18,7 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     ArrayList<Profesor> dbProfesores = new ArrayList<>();
     ArrayList<Servicio> dbEmpServicio = new ArrayList<>();
+    ArrayList<Estudiante> dbEstudiantes = new ArrayList<>();
 
     public boolean addDbProfesores(Profesor newProfesor) {
         if (newProfesor == null) {
@@ -33,6 +31,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
+
     public boolean addDbEmServicio(Servicio newServicio) {
         if (newServicio == null) {
             return false;
@@ -45,17 +44,35 @@ public class FrmFacultad extends javax.swing.JFrame {
         }
     }
 
-
+    public boolean addDbEstudiante(Estudiante newEstudiante) {
+        if (newEstudiante == null) {
+            return false;
+        }
+        if (!this.dbEstudiantes.contains(newEstudiante)) {
+            this.dbEstudiantes.add(newEstudiante);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public ArrayList<Profesor> listarProfesores() {
 
         return dbProfesores;
     }
+
     public ArrayList<Servicio> listarServicio() {
 
         return dbEmpServicio;
     }
-    public void limpiar(){
+
+    public ArrayList<Estudiante> listarEstudiante() {
+
+        return dbEstudiantes;
+    }
+
+    public void limpiar() {
+        //all profesor
         txt_nomb.setText("");
         txt_apell_edit.setText("");
         txt_incor_edit.setText("01/01/2000");
@@ -71,6 +88,7 @@ public class FrmFacultad extends javax.swing.JFrame {
         txt_depto.setText("");
         txt_desp.setText("");
         txt_ecivil.setText("");
+        //all empleado servicio
         txt_ape_srv.setText("");
         txt_desp_srv.setText("");
         txt_ecivil_srv.setText("");
@@ -78,6 +96,23 @@ public class FrmFacultad extends javax.swing.JFrame {
         txt_incor.setText("01/01/2000");
         txt_nom_srv.setText("");
         txt_sec_srv.setText("");
+        txt_ape_srv_edit.setText("");
+        txt_desp_srv_edit.setText("");
+        txt_ecivil_srv_edit.setText("");
+        txt_id_srv_edit.setText("");
+        txt_incor_srv_edit.setText("");
+        txt_sec_srv_edit.setText("");
+        //all estudiante
+        txt_idEst_edit.setText("");
+        txt_apellEst_edit.setText("");
+        txt_cursoEst_edit.setText("");
+        txt_ecivilEst_edit.setText("");
+        txt_nombEst_edit.setText("");
+        txt_cursoEst_edit.setText("");
+        txt_idEst.setText("");
+        txt_nombEst.setText("");
+        txt_apellEst.setText("");
+        txt_ecivilEst.setText("");
     }
 
     /**
@@ -163,18 +198,49 @@ public class FrmFacultad extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         txt_desp_srv_edit = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        txt_sec_srv1 = new javax.swing.JTextField();
+        txt_sec_srv_edit = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        txt_nom_srv1 = new javax.swing.JTextField();
+        txt_nom_srv_edit = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        txt_ape_srv1 = new javax.swing.JTextField();
+        txt_ape_srv_edit = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txt_incor_srv1 = new javax.swing.JTextField();
+        txt_incor_srv_edit = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        txt_ecivil_srv1 = new javax.swing.JTextField();
-        btn_buscaEdit1 = new javax.swing.JButton();
-        btn_editarProfe1 = new javax.swing.JButton();
+        txt_ecivil_srv_edit = new javax.swing.JTextField();
+        btn_busca_srv_Edit = new javax.swing.JButton();
+        btn_editar_srv = new javax.swing.JButton();
         btn_limpiar_edit1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        txt_idEst = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        txt_cursoEst = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        txt_nombEst = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        txt_apellEst = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        txt_ecivilEst = new javax.swing.JTextField();
+        btn_agregarEst = new javax.swing.JButton();
+        btn_limpiarEst = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        btn_listarEst = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbl_tablaEst = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        txt_idEst_edit = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        txt_cursoEst_edit = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        txt_nombEst_edit = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        txt_apellEst_edit = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        txt_ecivilEst_edit = new javax.swing.JTextField();
+        btn_buscaEst_edit = new javax.swing.JButton();
+        btn_editarEst = new javax.swing.JButton();
+        btn_limpiar_edit2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -294,10 +360,10 @@ public class FrmFacultad extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_agregar)
                     .addComponent(btn_limpiar))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Crear Profe", jPanel1);
+        jTabbedPane1.addTab("Crear Profesor", jPanel1);
 
         tbl_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -336,12 +402,12 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_listarProfe))
         );
 
-        jTabbedPane1.addTab("Listar Profe", jPanel2);
+        jTabbedPane1.addTab("Listar Profesor", jPanel2);
 
         btn_editarProfe.setText("Editar");
         btn_editarProfe.addActionListener(new java.awt.event.ActionListener() {
@@ -436,7 +502,7 @@ public class FrmFacultad extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(247, Short.MAX_VALUE)
+                .addContainerGap(239, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_buscaEdit)
                     .addComponent(btn_editarProfe)
@@ -472,10 +538,10 @@ public class FrmFacultad extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_ecivil_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel21))
-                    .addContainerGap(70, Short.MAX_VALUE)))
+                    .addContainerGap(62, Short.MAX_VALUE)))
         );
 
-        jTabbedPane1.addTab("Editar Profe", jPanel3);
+        jTabbedPane1.addTab("Editar Profesor", jPanel3);
 
         jLabel9.setText("Cedula");
 
@@ -592,10 +658,10 @@ public class FrmFacultad extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_agregar_srv)
                     .addComponent(btn_limpiar_srv))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Crear Serv", jPanel4);
+        jTabbedPane1.addTab("Crear Empleado Servicio", jPanel4);
 
         tbl_tablaSrv.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -634,12 +700,12 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_listarSrv))
         );
 
-        jTabbedPane1.addTab("Listar Serv", jPanel5);
+        jTabbedPane1.addTab("Listar Empleado Servicio", jPanel5);
 
         jLabel23.setText("Cedula");
 
@@ -651,41 +717,42 @@ public class FrmFacultad extends javax.swing.JFrame {
 
         jLabel25.setText("Seccion");
 
-        txt_sec_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
-        txt_sec_srv1.addActionListener(new java.awt.event.ActionListener() {
+        txt_sec_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_sec_srv_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_sec_srv1ActionPerformed(evt);
+                txt_sec_srv_editActionPerformed(evt);
             }
         });
 
         jLabel26.setText("Nombre");
 
-        txt_nom_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_nom_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
         jLabel27.setText("Apellido");
 
-        txt_ape_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_ape_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
         jLabel28.setText("Fecha ingreso ");
 
-        txt_incor_srv1.setText("01/01/2000");
-        txt_incor_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_incor_srv_edit.setEditable(false);
+        txt_incor_srv_edit.setText("01/01/2000");
+        txt_incor_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
         jLabel29.setText("Estado Civil");
 
-        txt_ecivil_srv1.setPreferredSize(new java.awt.Dimension(20, 24));
+        txt_ecivil_srv_edit.setPreferredSize(new java.awt.Dimension(20, 24));
 
-        btn_buscaEdit1.setText("Buscar");
-        btn_buscaEdit1.addActionListener(new java.awt.event.ActionListener() {
+        btn_busca_srv_Edit.setText("Buscar");
+        btn_busca_srv_Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscaEdit1ActionPerformed(evt);
+                btn_busca_srv_EditActionPerformed(evt);
             }
         });
 
-        btn_editarProfe1.setText("Editar");
-        btn_editarProfe1.addActionListener(new java.awt.event.ActionListener() {
+        btn_editar_srv.setText("Editar");
+        btn_editar_srv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarProfe1ActionPerformed(evt);
+                btn_editar_srvActionPerformed(evt);
             }
         });
 
@@ -702,9 +769,9 @@ public class FrmFacultad extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(171, Short.MAX_VALUE)
-                .addComponent(btn_buscaEdit1)
+                .addComponent(btn_busca_srv_Edit)
                 .addGap(18, 18, 18)
-                .addComponent(btn_editarProfe1)
+                .addComponent(btn_editar_srv)
                 .addGap(18, 18, 18)
                 .addComponent(btn_limpiar_edit1)
                 .addGap(169, 169, 169))
@@ -721,22 +788,22 @@ public class FrmFacultad extends javax.swing.JFrame {
                         .addComponent(jLabel28))
                     .addGap(61, 61, 61)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_sec_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
-                        .addComponent(txt_nom_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_ape_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_sec_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                        .addComponent(txt_nom_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_ape_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txt_id_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_incor_srv1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_ecivil_srv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_incor_srv_edit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_ecivil_srv_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txt_desp_srv_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(24, 24, 24)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 262, Short.MAX_VALUE)
+                .addGap(0, 254, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_buscaEdit1)
-                    .addComponent(btn_editarProfe1)
+                    .addComponent(btn_busca_srv_Edit)
+                    .addComponent(btn_editar_srv)
                     .addComponent(btn_limpiar_edit1)))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
@@ -751,27 +818,272 @@ public class FrmFacultad extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel25)
-                        .addComponent(txt_sec_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_sec_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_nom_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_nom_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel26))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_ape_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_ape_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel27))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_incor_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_incor_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel28))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_ecivil_srv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_ecivil_srv_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel29))
-                    .addContainerGap(45, Short.MAX_VALUE)))
+                    .addContainerGap(37, Short.MAX_VALUE)))
         );
 
-        jTabbedPane1.addTab("Editar Serv", jPanel6);
+        jTabbedPane1.addTab("Editar Empleado Servicio", jPanel6);
+
+        jLabel30.setText("Cedula");
+
+        txt_idEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel31.setText("Curso");
+
+        txt_cursoEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel32.setText("Nombre");
+
+        txt_nombEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel33.setText("Apellido");
+
+        txt_apellEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel34.setText("Estado Civil");
+
+        txt_ecivilEst.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        btn_agregarEst.setText("Agregar");
+        btn_agregarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarEstActionPerformed(evt);
+            }
+        });
+
+        btn_limpiarEst.setText("Limpiar");
+        btn_limpiarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarEstActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txt_idEst, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+                    .addComponent(txt_cursoEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_ecivilEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_apellEst, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombEst, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addContainerGap(404, Short.MAX_VALUE)
+                    .addComponent(btn_agregarEst)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btn_limpiarEst)
+                    .addGap(24, 24, 24)))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_idEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_cursoEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_nombEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_apellEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_ecivilEst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addContainerGap(130, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(224, 224, 224)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_agregarEst)
+                        .addComponent(btn_limpiarEst))
+                    .addContainerGap(30, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Crear Estudiante", jPanel7);
+
+        btn_listarEst.setText("Listar");
+        btn_listarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_listarEstActionPerformed(evt);
+            }
+        });
+
+        tbl_tablaEst.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tbl_tablaEst);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(btn_listarEst)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_listarEst)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Listar Estudiante", jPanel8);
+
+        jLabel35.setText("Cedula");
+
+        txt_idEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel36.setText("Curso");
+
+        txt_cursoEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel37.setText("Nombre");
+
+        txt_nombEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel38.setText("Apellido");
+
+        txt_apellEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        jLabel39.setText("Estado Civil");
+
+        txt_ecivilEst_edit.setPreferredSize(new java.awt.Dimension(20, 24));
+
+        btn_buscaEst_edit.setText("Buscar");
+        btn_buscaEst_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscaEst_editActionPerformed(evt);
+            }
+        });
+
+        btn_editarEst.setText("Editar");
+        btn_editarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editarEstActionPerformed(evt);
+            }
+        });
+
+        btn_limpiar_edit2.setText("Limpiar");
+        btn_limpiar_edit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiar_edit2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_buscaEst_edit)
+                .addGap(18, 18, 18)
+                .addComponent(btn_editarEst)
+                .addGap(18, 18, 18)
+                .addComponent(btn_limpiar_edit2)
+                .addGap(158, 158, 158))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txt_idEst_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_cursoEst_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_ecivilEst_edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_apellEst_edit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombEst_edit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_idEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_cursoEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_nombEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_apellEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_ecivilEst_edit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_buscaEst_edit)
+                    .addComponent(btn_editarEst)
+                    .addComponent(btn_limpiar_edit2))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Editar Estudiante", jPanel9);
 
         jLabel1.setText("Programa Facultad");
 
@@ -794,8 +1106,8 @@ public class FrmFacultad extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -890,7 +1202,6 @@ public class FrmFacultad extends javax.swing.JFrame {
             }
         }
         limpiar();
-
     }//GEN-LAST:event_btn_editarProfeActionPerformed
 
     private void txt_depto_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_depto_editActionPerformed
@@ -928,6 +1239,37 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     private void txt_sec_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sec_srvActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        int index = 0;
+        Servicio serviEncontrado = null;
+        String cedSrvBuscar = txt_id_edit.getText();
+        for (Servicio servi : dbEmpServicio) {
+            if (servi.getId().equals(cedSrvBuscar)) {
+                System.out.println(index);
+                serviEncontrado = servi;
+                break;
+            }
+            index++;
+        }
+        if (serviEncontrado != null) {
+            Seccion sec;
+            sec = new Seccion(txt_sec_srv_edit.getText());
+            Despacho desp;
+            desp = new Despacho(txt_desp_srv_edit.getText());
+            try {
+                Date fincor = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv_edit.getText());
+                String idEditar = txt_id_edit.getText();
+                String nomEditar = txt_nomb_edit.getText();
+                String apeEditar = txt_apell_edit.getText();
+                String estCivil = txt_ecivil_edit.getText();
+                //(Departamento , Despacho , Date fechaIncor,  id,  nombre,  apellido,  eCivil
+                dbEmpServicio.set(index, new Servicio(sec, desp, fincor, idEditar, nomEditar, apeEditar, estCivil));
+                JOptionPane.showMessageDialog(rootPane, "Profesor Editado Correctamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error, verifique que la fecha u otros campos estén correctos" + e);
+            }
+        }
+        limpiar();
     }//GEN-LAST:event_txt_sec_srvActionPerformed
 
     private void btn_agregar_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregar_srvActionPerformed
@@ -936,8 +1278,8 @@ public class FrmFacultad extends javax.swing.JFrame {
         try {
             String nombre = txt_nom_srv.getText();
             String apellido = txt_ape_srv.getText();
-            String cedula = txt_ape_srv.getText();
-            String ecivil = txt_id_srv.getText();
+            String cedula = txt_id_srv.getText();
+            String ecivil = txt_ecivil_srv.getText();
             Date fechaIncorp = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv.getText());
             Seccion sec = new Seccion(txt_sec_srv.getText());
             Despacho despacho = new Despacho(txt_desp_srv.getText());
@@ -962,8 +1304,6 @@ public class FrmFacultad extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_limpiar_srvActionPerformed
 
     private void btn_listarSrvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarSrvActionPerformed
-        // TODO add your handling code here:
-        // TODO add your handling code here:
         ArrayList<Servicio> datosServicio = listarServicio();
         DefaultTableModel model;
         //Departamento depto, Despacho despacho, Date fechaIncor, String id, String nombre, String apellido, String eCivil
@@ -983,21 +1323,174 @@ public class FrmFacultad extends javax.swing.JFrame {
         tbl_tablaSrv.setModel(model);
     }//GEN-LAST:event_btn_listarSrvActionPerformed
 
-    private void txt_sec_srv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sec_srv1ActionPerformed
+    private void txt_sec_srv_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sec_srv_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_sec_srv1ActionPerformed
+    }//GEN-LAST:event_txt_sec_srv_editActionPerformed
 
-    private void btn_buscaEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscaEdit1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_buscaEdit1ActionPerformed
+    private void btn_busca_srv_EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_busca_srv_EditActionPerformed
+        Servicio serviEncontrado = null;
+        String cedBuscar = txt_id_srv_edit.getText();
+        for (Servicio servi : dbEmpServicio) {
+            if (servi.getId().equals(cedBuscar)) {
+                serviEncontrado = servi;
+                break;
+            }
+        }
+        if (serviEncontrado != null) {
+            txt_ape_srv_edit.setText(serviEncontrado.getApellido());
+            txt_sec_srv_edit.setText(serviEncontrado.devolverSec());
+            txt_desp_srv_edit.setText(serviEncontrado.devolverDesp());
+            txt_ecivil_srv_edit.setText(serviEncontrado.geteCivil());
+            txt_nom_srv_edit.setText(serviEncontrado.getNombre());
+            txt_incor_srv_edit.setText(String.valueOf(serviEncontrado.getFechaIncor()));
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No se encuentra ese id");
+        }
 
-    private void btn_editarProfe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarProfe1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_editarProfe1ActionPerformed
+
+    }//GEN-LAST:event_btn_busca_srv_EditActionPerformed
+
+    private void btn_editar_srvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editar_srvActionPerformed
+        int index = 0;
+        Servicio serviEncontrado = null;
+        String cedBuscar = txt_id_srv_edit.getText();
+        for (Servicio servi : dbEmpServicio) {
+            if (servi.getId().equals(cedBuscar)) {
+                System.out.println(index);
+                serviEncontrado = servi;
+                break;
+            }
+            index++;
+        }
+        if (serviEncontrado != null) {
+            Seccion sec;
+            sec = new Seccion(txt_sec_srv_edit.getText());
+            Despacho desp;
+            desp = new Despacho(txt_desp_srv_edit.getText());
+            try {
+                Date fincor = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv_edit.getText());
+                String idEditar = txt_id_srv_edit.getText();
+                String nomEditar = txt_nom_srv_edit.getText();
+                String apeEditar = txt_ape_srv_edit.getText();
+                String estCivil = txt_ecivil_srv_edit.getText();
+                //(Seccion , Despacho , Date fechaIncor,  id,  nombre,  apellido,  eCivil
+                dbEmpServicio.set(index, new Servicio(sec, desp, fincor, idEditar, nomEditar, apeEditar, estCivil));
+                JOptionPane.showMessageDialog(rootPane, "Empleado Editado Correctamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error, verifique que la fecha u otros campos estén correctos" + e);
+            }
+        }
+        limpiar();
+    }//GEN-LAST:event_btn_editar_srvActionPerformed
 
     private void btn_limpiar_edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiar_edit1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_limpiar_edit1ActionPerformed
+
+    private void btn_agregarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarEstActionPerformed
+        // TODO add your handling code here:
+        Estudiante est = null;
+        try {
+            String nombre = txt_nombEst.getText();
+            String apellido = txt_apellEst.getText();
+            String cedula = txt_idEst.getText();
+            String ecivil = txt_ecivilEst.getText();
+            //Date fechaIncorp = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor.getText());
+            Curso curso = new Curso(txt_cursoEst.getText());
+            if (!"".equals(nombre) && !"".equals(apellido) && !"".equals(cedula) && !"".equals(ecivil) && !"".equals(curso.getNombreCurso())) {
+                //Profesor(Departamento depto, Despacho despacho, Date fechaIncor, String id, String nombre, String apellido, String eCivil, despacho, fechaIncor, id, nombre, apellido, eCivil);
+                est = new Estudiante(curso, cedula, nombre, apellido, ecivil);
+            }
+            if (addDbEstudiante(est)) {
+                JOptionPane.showMessageDialog(rootPane, "Estudiante guardado");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No se puede guardar");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error, verifique los campos estén correctos" + e);
+        }
+
+    }//GEN-LAST:event_btn_agregarEstActionPerformed
+
+    private void btn_limpiarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarEstActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_btn_limpiarEstActionPerformed
+
+    private void btn_listarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarEstActionPerformed
+        // TODO add your handling code here:
+        ArrayList<Estudiante> datosEstudiante = listarEstudiante();
+        DefaultTableModel model;
+        //Departamento depto, Despacho despacho, Date fechaIncor, String id, String nombre, String apellido, String eCivil
+        String[] columnas = {"id", "nombre", "apellido", "eCivil", "curso"};
+        model = new DefaultTableModel(null, columnas);
+        String[] filas = new String[5];
+        for (Estudiante est : datosEstudiante) {
+            filas[0] = est.getId();
+            filas[1] = est.getNombre();
+            filas[2] = est.getApellido();
+            filas[3] = est.geteCivil();
+            filas[4] = est.devolverCurso();
+            model.addRow(filas);
+        }
+        tbl_tablaEst.setModel(model);
+    }//GEN-LAST:event_btn_listarEstActionPerformed
+
+    private void btn_buscaEst_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscaEst_editActionPerformed
+        Estudiante estEncontrado = null;
+        String cedBuscar = txt_idEst_edit.getText();
+        for (Estudiante est : dbEstudiantes) {
+            if (est.getId().equals(cedBuscar)) {
+                estEncontrado = est;
+                break;
+            }
+        }
+        if (estEncontrado != null) {
+            txt_apellEst_edit.setText(estEncontrado.getApellido());
+            txt_cursoEst_edit.setText(estEncontrado.devolverCurso());
+            txt_ecivilEst_edit.setText(estEncontrado.geteCivil());
+            txt_nombEst_edit.setText(estEncontrado.getNombre());
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No se encuentra ese id");
+        }
+    }//GEN-LAST:event_btn_buscaEst_editActionPerformed
+
+    private void btn_editarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarEstActionPerformed
+        int index = 0;
+        Estudiante estEncontrado = null;
+        String cedBuscar = txt_idEst_edit.getText();
+        for (Estudiante est : dbEstudiantes) {
+            if (est.getId().equals(cedBuscar)) {
+                System.out.println(index);
+                estEncontrado = est;
+                break;
+            }
+            index++;
+        }
+        if (estEncontrado != null) {
+            Curso curso;
+            curso = new Curso(txt_cursoEst_edit.getText());
+            try {
+                //Date fincor = new SimpleDateFormat("dd/MM/yyyy").parse(txt_incor_srv_edit.getText());
+                String idEditar = txt_idEst_edit.getText();
+                String nomEditar = txt_nombEst_edit.getText();
+                String apeEditar = txt_apellEst_edit.getText();
+                String estCivil = txt_ecivilEst_edit.getText();
+                //Curso curso, String id, String nombre, String apellido, String eCivil
+                dbEstudiantes.set(index, new Estudiante(curso, idEditar, nomEditar, apeEditar, estCivil));
+                JOptionPane.showMessageDialog(rootPane, "Estudiante Editado Correctamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Error, verifique que los campos estén correctos" + e);
+            }
+        }
+        limpiar();
+    }//GEN-LAST:event_btn_editarEstActionPerformed
+
+    private void btn_limpiar_edit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiar_edit2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_limpiar_edit2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1037,15 +1530,21 @@ public class FrmFacultad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agregar;
+    private javax.swing.JButton btn_agregarEst;
     private javax.swing.JButton btn_agregar_srv;
     private javax.swing.JButton btn_buscaEdit;
-    private javax.swing.JButton btn_buscaEdit1;
+    private javax.swing.JButton btn_buscaEst_edit;
+    private javax.swing.JButton btn_busca_srv_Edit;
+    private javax.swing.JButton btn_editarEst;
     private javax.swing.JButton btn_editarProfe;
-    private javax.swing.JButton btn_editarProfe1;
+    private javax.swing.JButton btn_editar_srv;
     private javax.swing.JButton btn_limpiar;
+    private javax.swing.JButton btn_limpiarEst;
     private javax.swing.JButton btn_limpiar_edit;
     private javax.swing.JButton btn_limpiar_edit1;
+    private javax.swing.JButton btn_limpiar_edit2;
     private javax.swing.JButton btn_limpiar_srv;
+    private javax.swing.JButton btn_listarEst;
     private javax.swing.JButton btn_listarProfe;
     private javax.swing.JButton btn_listarSrv;
     private javax.swing.JLabel jLabel1;
@@ -1071,6 +1570,16 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1083,15 +1592,24 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tbl_tabla;
+    private javax.swing.JTable tbl_tablaEst;
     private javax.swing.JTable tbl_tablaSrv;
     private javax.swing.JTextField txt_ape_srv;
-    private javax.swing.JTextField txt_ape_srv1;
+    private javax.swing.JTextField txt_ape_srv_edit;
     private javax.swing.JTextField txt_apell;
+    private javax.swing.JTextField txt_apellEst;
+    private javax.swing.JTextField txt_apellEst_edit;
     private javax.swing.JTextField txt_apell_edit;
+    private javax.swing.JTextField txt_cursoEst;
+    private javax.swing.JTextField txt_cursoEst_edit;
     private javax.swing.JTextField txt_depto;
     private javax.swing.JTextField txt_depto_edit;
     private javax.swing.JTextField txt_desp;
@@ -1099,22 +1617,28 @@ public class FrmFacultad extends javax.swing.JFrame {
     private javax.swing.JTextField txt_desp_srv;
     private javax.swing.JTextField txt_desp_srv_edit;
     private javax.swing.JTextField txt_ecivil;
+    private javax.swing.JTextField txt_ecivilEst;
+    private javax.swing.JTextField txt_ecivilEst_edit;
     private javax.swing.JTextField txt_ecivil_edit;
     private javax.swing.JTextField txt_ecivil_srv;
-    private javax.swing.JTextField txt_ecivil_srv1;
+    private javax.swing.JTextField txt_ecivil_srv_edit;
     private javax.swing.JTextField txt_id;
+    private javax.swing.JTextField txt_idEst;
+    private javax.swing.JTextField txt_idEst_edit;
     private javax.swing.JTextField txt_id_edit;
     private javax.swing.JTextField txt_id_srv;
     private javax.swing.JTextField txt_id_srv_edit;
     private javax.swing.JTextField txt_incor;
     private javax.swing.JTextField txt_incor_edit;
     private javax.swing.JTextField txt_incor_srv;
-    private javax.swing.JTextField txt_incor_srv1;
+    private javax.swing.JTextField txt_incor_srv_edit;
     private javax.swing.JTextField txt_nom_srv;
-    private javax.swing.JTextField txt_nom_srv1;
+    private javax.swing.JTextField txt_nom_srv_edit;
     private javax.swing.JTextField txt_nomb;
+    private javax.swing.JTextField txt_nombEst;
+    private javax.swing.JTextField txt_nombEst_edit;
     private javax.swing.JTextField txt_nomb_edit;
     private javax.swing.JTextField txt_sec_srv;
-    private javax.swing.JTextField txt_sec_srv1;
+    private javax.swing.JTextField txt_sec_srv_edit;
     // End of variables declaration//GEN-END:variables
 }

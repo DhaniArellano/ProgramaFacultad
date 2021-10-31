@@ -16,10 +16,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmFacultad extends javax.swing.JFrame {
 
+    //declaration of ArrayList that are part of the 
+    //structure to keep temporary data, if the application is closed the data will be lost.
     ArrayList<Profesor> dbProfesores = new ArrayList<>();
     ArrayList<Servicio> dbEmpServicio = new ArrayList<>();
     ArrayList<Estudiante> dbEstudiantes = new ArrayList<>();
 
+    //method addDbProfessors receives an object and adds it to the arraylistDb
     public boolean addDbProfesores(Profesor newProfesor) {
         if (newProfesor == null) {
             return false;
@@ -31,7 +34,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
-
+    //method addDbEmServicio receives an object and adds it to the arraylistDb
     public boolean addDbEmServicio(Servicio newServicio) {
         if (newServicio == null) {
             return false;
@@ -43,7 +46,7 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
-
+    //method addDbEstudiante receives an object and adds it to the arraylistDb
     public boolean addDbEstudiante(Estudiante newEstudiante) {
         if (newEstudiante == null) {
             return false;
@@ -55,22 +58,20 @@ public class FrmFacultad extends javax.swing.JFrame {
             return false;
         }
     }
-
+    //this function return all the tempDb
     public ArrayList<Profesor> listarProfesores() {
-
         return dbProfesores;
     }
-
+    //this function return all the tempDb
     public ArrayList<Servicio> listarServicio() {
-
         return dbEmpServicio;
     }
-
+    //this function return all the tempDb
     public ArrayList<Estudiante> listarEstudiante() {
 
         return dbEstudiantes;
     }
-
+    //this function just clear fields, filling them with and empty string
     public void limpiar() {
         //all profesor
         txt_nomb.setText("");
@@ -244,6 +245,9 @@ public class FrmFacultad extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gestor de Factultad");
+        setAlwaysOnTop(true);
+        setResizable(false);
 
         jLabel2.setText("Departamento");
 
@@ -1085,29 +1089,30 @@ public class FrmFacultad extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Editar Estudiante", jPanel9);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel1.setText("Programa Facultad");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(199, 199, 199)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(234, 234, 234)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
